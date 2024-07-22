@@ -1,0 +1,116 @@
+@media (max-width: 1200px) {
+  /*main*/
+  .main_inner {
+    position: relative;
+    height: 100vh;
+    .main_title {
+      text-align: center;
+      position: absolute;
+      top: 30%;
+      font-weight: 700;
+      line-height: 60px;
+      color: $ligt-color;
+    }
+    .tur_form {
+      position: absolute;
+      width: 60%;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 30px;
+      color: $ligt-color;
+      background: rgb(255, 255, 255, 0.2);
+    }
+  }
+  /*feedback*/
+  .feedback_inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    padding: 15px 30px;
+
+    .feedback_form {
+      form {
+        input {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1051px) {
+  /*main*/
+  .main_inner {
+    .tur_form {
+      grid-template-columns: 1fr;
+
+      .form_select {
+        display: none;
+      }
+    }
+  }
+
+  /*programm*/
+  .programm_inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 8% 0;
+
+    .programm_video {
+      position: relative;
+      width: 480px;
+      height: 526px;
+      margin-bottom: 30px;
+    }
+  }
+  /*programm_description*/
+  .programmlist_inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    .list_information {
+      &-description {
+        display: grid;
+        grid-template-columns: 0.2fr 2fr;
+        gap: 20px;
+        margin: 40px 0;
+
+        .description_text {
+          .text_subtitle {
+            font-size: 18px;
+            font-weight: 700;
+            color: $blackmain-color;
+          }
+        }
+      }
+    }
+
+    .list-photo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      img {
+        transition: 1s;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  /*header*/
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 320px) {
+}

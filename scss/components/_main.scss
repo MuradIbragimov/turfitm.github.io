@@ -1,0 +1,65 @@
+$blackmain-color: #18121e;
+$blacksup-color: #000000;
+$yellow-color: #f2be22;
+$ligt-color: #fdfdfd;
+$darkgreen-color: #1a3e3e;
+#main {
+  background-image: url("../img/bg/bg-main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.main_inner {
+  position: relative;
+  height: 100vh;
+  .main_title {
+    position: absolute;
+    top: 35%;
+    font-size: calc(24px + (18 + 18 * 0.7) * ((100vw - 320px) / 1180));
+    font-weight: 700;
+    line-height: 75px;
+    color: $ligt-color;
+  }
+  .tur_form {
+    position: absolute;
+    top: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr;
+    gap: 24px;
+    padding: 30px;
+    color: $ligt-color;
+    background: rgb(255, 255, 255, 0.2);
+
+    .form_select {
+      display: flex;
+      flex-direction: column;
+      width: 270px;
+      &-ct {
+        display: flex;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        gap: 20px;
+        height: 52px;
+        padding: 0 16px;
+        border: 1px solid #e1e3e4;
+        border-radius: 8px;
+        gap: 8px;
+        option {
+          color: $darkgreen-color;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 24px;
+        }
+
+        input {
+          text-align: center;
+          padding: 13px 0;
+        }
+      }
+    }
+  }
+  .form_submit {
+    height: 52px;
+  }
+}
