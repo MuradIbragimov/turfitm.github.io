@@ -45,13 +45,13 @@ body {
 }
 
 .title {
-  font-size: 32px;
+  font-size: calc(24px + (8 + 8 * 0.7) * ((100vw - 320px) / 1180));
   font-weight: 800;
   line-height: 38.4px;
 }
 
 .top_title {
-  font-size: 24px;
+  font-size: calc(16px + (8 + 8 * 0.7) * ((100vw - 320px) / 1180));
   color: $yellow-color;
   text-transform: uppercase;
   margin-bottom: 10px;

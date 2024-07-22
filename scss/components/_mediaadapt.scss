@@ -24,22 +24,8 @@
       background: rgb(255, 255, 255, 0.2);
     }
   }
-  /*feedback*/
-  .feedback_inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: absolute;
-    padding: 15px 30px;
-
-    .feedback_form {
-      form {
-        input {
-          width: 50%;
-        }
-      }
-    }
-  }
 }
+
 @media (max-width: 1051px) {
   /*main*/
   .main_inner {
@@ -67,6 +53,7 @@
       margin-bottom: 30px;
     }
   }
+
   /*programm_description*/
   .programmlist_inner {
     display: grid;
@@ -100,8 +87,6 @@
       }
     }
   }
-
-  /*footer*/
 }
 
 @media (max-width: 920px) {
@@ -134,39 +119,81 @@
     .burger {
       display: flex;
     }
+    @keyframes burgerAnimation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 
-  @keyframes burgerAnimation {
-    from {
-      opacity: 0;
+  /*programm_list*/
+  .programmlist_inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    .list-photo {
+      display: grid;
+      grid-template-columns: 1fr;
     }
-    to {
-      opacity: 1;
+  }
+
+  /*blog*/
+  .blog_inner {
+    .blog {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    /*footer*/
+    .footer_inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   .feedback_inner {
-    grid-template-columns: 1fr;
     text-align: center;
-    padding: 30px 60px;
-  }
-
-  .footer_inner {
     display: grid;
     grid-template-columns: 1fr;
-    width: 60%;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    position: absolute;
+    padding: 15px 30px;
 
-    .footer_important {
+    .feedback_form {
+      form {
+        input {
+          width: 50%;
+        }
+      }
     }
   }
 
   .footer_inner {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10p;
+    color: $grey-bg-color;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 570px) {
+  .main_inner {
+    padding: 20px;
+    .main_title {
+      line-height: 40px;
+    }
+    .tur_form {
+      .btn {
+        font-size: 11px;
+      }
+    }
+
+    .footer_inner {
+      margin-top: 150px;
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -240,17 +267,12 @@
       }
     }
   }
-}
 
-/*impressions*/
-.impressions_inner {
-  padding: 20px;
-  .btn {
-    margin-bottom: 100px;
+  /*impressions*/
+  .impressions_inner {
+    padding: 20px;
+    .btn {
+      margin-bottom: 100px;
+    }
   }
-}
-
-.feedback_inner {
-}
-@media (max-width: 320px) {
 }
