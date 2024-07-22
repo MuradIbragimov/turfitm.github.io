@@ -13,6 +13,8 @@ $grey-bg-color: #f3f5f4;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
   .list_information {
+    display: flex;
+    flex-direction: column;
     &-description {
       display: grid;
       grid-template-columns: 0.2fr 2fr;

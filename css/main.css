@@ -98,6 +98,10 @@ li:hover {
   display: none;
 }
 
+.open {
+  display: flex !important;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -198,11 +202,12 @@ legend {
 .header_inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header_inner .header_nav {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 .header_inner .header_nav-menu a {
   margin-right: 15px;
@@ -214,6 +219,46 @@ legend {
 }
 .header_inner .header_nav-menu a:hover {
   color: #1a3e3e;
+}
+.header_inner .burger {
+  display: none;
+  position: relative;
+  z-index: 50;
+  align-items: center;
+  justify-content: flex-end;
+  width: 30px;
+  height: 18px;
+}
+.header_inner .burger::before, .header_inner .burger::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #fdfdfd;
+  transition: all 0.3s ease 0s;
+}
+.header_inner .burger::before {
+  top: 0;
+}
+.header_inner .burger::after {
+  bottom: 0;
+}
+.header_inner .burger.active span {
+  transform: scale(0);
+}
+.header_inner .burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+.header_inner .burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+.header_inner .burger span {
+  height: 2px;
+  width: 80%;
+  transform: scale(1);
+  background-color: #fdfdfd;
 }
 
 #main {
@@ -363,6 +408,10 @@ legend {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+}
+.programmlist_inner .list_information {
+  display: flex;
+  flex-direction: column;
 }
 .programmlist_inner .list_information-description {
   display: grid;
@@ -531,7 +580,7 @@ legend {
   padding: 30px 0;
 }
 .impressions_inner .impressions_img img {
-  margin: 5px;
+  margin: 3px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -704,7 +753,119 @@ footer {
   .programmlist_inner .list-photo img:hover {
     transform: scale(1.2);
   }
+  /*footer*/
 }
 @media (max-width: 920px) {
   /*header*/
+  .header_inner {
+    padding: 20px;
+  }
+  .header_inner .header_nav .btn {
+    display: none;
+  }
+  .header_inner .header_nav-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 50px 40px;
+    background-color: #18121e;
+    animation: burgerAnimation 0.4s;
+    gap: 30px;
+  }
+  .header_inner .burger {
+    display: flex;
+  }
+  @keyframes burgerAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .feedback_inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 60px;
+  }
+  .footer_inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 480px) {
+  /*main*/
+  .form_select {
+    display: none;
+  }
+  /*Programm*/
+  .programm_inner .programm_video {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    margin-bottom: 30px;
+  }
+  .programm_inner .programm_video-bg {
+    display: none;
+  }
+  /*programm_list*/
+  .programmlist_inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 0px;
+  }
+  .programmlist_inner .list_information-title {
+    text-align: center;
+  }
+  .programmlist_inner .list-photo {
+    display: none;
+  }
+  /*direction*/
+  .directions_inner .directions_information {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .directions_inner .directions_information-description img {
+    width: 100%;
+  }
+  /*blog*/
+  .blog_inner {
+    text-align: center;
+    padding: 30px 0;
+  }
+  .blog_inner .blog {
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .blog_inner .blog .blog_information {
+    grid-template-columns: 1fr;
+  }
+  .blog_inner .blog .blog_information-text {
+    height: 200px;
+    padding: 20px;
+  }
+  .blog_inner .blog .blog_information-text .text_footer {
+    right: 0;
+  }
+}
+/*impressions*/
+.impressions_inner {
+  padding: 20px;
+}
+.impressions_inner .btn {
+  margin-bottom: 100px;
 }/*# sourceMappingURL=main.css.map */
